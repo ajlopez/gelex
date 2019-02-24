@@ -25,3 +25,19 @@ exports['scan character'] = function (test) {
     test.equal(scanner.scan(), null);
 };
 
+exports['scan two characters'] = function (test) {
+    const scanner = scanners.scanner('01');
+
+    var result = scanner.scan();
+
+    test.equal(result, '0');
+    test.equal(scanner.position(), 1);
+
+    var result = scanner.scan();
+
+    test.equal(result, '1');
+    test.equal(scanner.position(), 2);
+
+    test.equal(scanner.scan(), null);
+};
+
