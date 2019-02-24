@@ -45,3 +45,21 @@ exports['get zero and one skipping spaces'] = function (test) {
     test.equal(lexer.next(), null);
     test.equal(lexer.position(), 8);
 };
+
+exports['get zero and one skipping tabs and spaces'] = function (test) {
+    gelex.define('zero', '0');
+    gelex.define('one', '1');
+    
+    const lexer = gelex.lexer('\t  0\t1  ');
+    
+    var result = lexer.next();
+    
+    test.deepEqual(result, { type: 'zero', value: '0', begin: 3, end: 3 });
+
+    var result = lexer.next();
+    
+    test.deepEqual(result, { type: 'one', value: '1', begin: 5, end: 5 });
+    
+    test.equal(lexer.next(), null);
+    test.equal(lexer.position(), 8);
+};
