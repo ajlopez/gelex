@@ -1,0 +1,26 @@
+{
+  "name": "gelex",
+  "description": "Generic lexer, WIP",
+  "keywords": [
+    "ast",
+    "compiler"
+  ],
+  "version": "0.0.1alpha",
+  "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ajlopez/gelex.git"
+  },
+  "main": "./lib/gelex.js",
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "scripts": {
+    "test": "simpleunit ./test -r"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "simpleunit": "0.0.8"
+  }
+}
