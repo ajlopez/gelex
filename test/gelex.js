@@ -8,6 +8,25 @@ exports['get unknown character'] = function (test) {
     
     test.ok(result);
     test.deepEqual(result, { type: 'unknown', value: '@', begin: 0, end: 0 });
+
+    test.equal(lexer.next(), null);
+};
+
+exports['get digits'] = function (test) {
+    gelex.define('prime', '2357');
+    
+    const primes = '2357';
+    
+    const lexer = gelex.lexer(primes);
+    
+    for (var k = 0; k < primes.length; k++) {
+        const result = lexer.next();
+        
+        test.ok(result);
+        test.deepEqual(result, { type: 'prime', value: primes[k], begin: k, end: k });
+    }
+    
+    test.equal(lexer.next(), null);
 };
 
 exports['get zero and one'] = function (test) {
