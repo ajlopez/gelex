@@ -2,7 +2,7 @@
   "name": "gelex",
   "description": "Generic lexer, WIP",
   "keywords": [
-    "ast",
+    "lexer",
     "compiler"
   ],
   "version": "0.0.1alpha",
