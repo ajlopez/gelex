@@ -41,3 +41,21 @@ exports['scan two characters'] = function (test) {
     test.equal(scanner.scan(), null);
 };
 
+exports['scan same character twice'] = function (test) {
+    const scanner = scanners.scanner('0');
+
+    var result = scanner.scan();
+
+    test.equal(result, '0');
+    test.equal(scanner.position(), 1);
+
+    scanner.seek(0);
+
+    var result = scanner.scan();
+
+    test.equal(result, '0');
+    test.equal(scanner.position(), 1);
+
+    test.equal(scanner.scan(), null);
+};
+
