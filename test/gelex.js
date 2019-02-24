@@ -1,6 +1,15 @@
 
 const gelex = require('..');
 
+exports['get unknown character'] = function (test) {
+    const lexer = gelex.lexer('@');
+    
+    const result = lexer.next();
+    
+    test.ok(result);
+    test.deepEqual(result, { type: 'unknown', value: '@', begin: 0, end: 0 });
+};
+
 exports['get zero and one'] = function (test) {
     gelex.define('zero', '0');
     gelex.define('one', '1');
