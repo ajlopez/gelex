@@ -82,3 +82,20 @@ exports['get zero and one skipping tabs and spaces'] = function (test) {
     test.equal(lexer.next(), null);
     test.equal(lexer.position(), 8);
 };
+
+exports['get two digits'] = function (test) {
+    gelex.define('twodigits', [ '0123456789', '0123456789' ]);
+    
+    const lexer = gelex.lexer('1234');
+    
+    var result = lexer.next();
+    
+    test.deepEqual(result, { type: 'twodigits', value: '12', begin: 0, end: 1 });
+
+    var result = lexer.next();
+    
+    test.deepEqual(result, { type: 'twodigits', value: '34', begin: 2, end: 3 });
+    
+    test.equal(lexer.next(), null);
+    test.equal(lexer.position(), 4);
+};
