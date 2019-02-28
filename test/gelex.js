@@ -99,3 +99,16 @@ exports['get two digits'] = function (test) {
     test.equal(lexer.next(), null);
     test.equal(lexer.position(), 4);
 };
+
+exports['get integer'] = function (test) {
+    gelex.define('integer', [ '0123456789', '0123456789*' ]);
+    
+    const lexer = gelex.lexer('1234');
+    
+    var result = lexer.next();
+    
+    test.deepEqual(result, { type: 'integer', value: '1234', begin: 0, end: 3 });
+    
+    test.equal(lexer.next(), null);
+    test.equal(lexer.position(), 4);
+};
