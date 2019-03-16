@@ -13,7 +13,7 @@ exports['get unknown character'] = function (test) {
 };
 
 exports['get digits'] = function (test) {
-    gelex.define('prime', '2357');
+    gelex.define('prime', '[2357]');
     
     const primes = '2357';
     
@@ -84,7 +84,7 @@ exports['get zero and one skipping tabs and spaces'] = function (test) {
 };
 
 exports['get two digits'] = function (test) {
-    gelex.define('twodigits', [ '0123456789', '0123456789' ]);
+    gelex.define('twodigits', '[0123456789][0123456789]');
     
     const lexer = gelex.lexer('1234');
     
@@ -101,7 +101,7 @@ exports['get two digits'] = function (test) {
 };
 
 exports['get integer'] = function (test) {
-    gelex.define('integer', [ '0123456789', '0123456789*' ]);
+    gelex.define('integer', '[0123456789][0123456789]*');
     
     const lexer = gelex.lexer('1234');
     
