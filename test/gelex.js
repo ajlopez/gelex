@@ -1,5 +1,5 @@
 
-const gelex = require('..');
+const gelex = require('..').definition();
 
 exports['get unknown character'] = function (test) {
     const lexer = gelex.lexer('@');
