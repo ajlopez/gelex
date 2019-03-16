@@ -19,3 +19,22 @@ exports['get integer'] = function (test) {
 
     test.equal(lexer.next(), null);
 };
+
+exports['get name'] = function (test) {
+    const def = gelex.definition();
+    def.define('name', '[a-zA-Z_][a-zA-Z0-9_]*');
+    
+    const lexer = def.lexer('foo bar42 _x _x123 foo_bar');
+    
+    const expected = [ 'foo', 'bar42', '_x', '_x123', 'foo_bar' ];
+    
+    for (let k = 0; k < expected.length; k++) {
+        const result = lexer.next();
+        
+        test.ok(result);
+        test.equal(result.type, 'name');
+        test.equal(result.value, expected[k]);
+    }
+
+    test.equal(lexer.next(), null);
+};
