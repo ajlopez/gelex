@@ -68,6 +68,11 @@ def.define('delimiter', '}' );
 ...
 ```
 
+Matching any character using `[.]`:
+```
+def.define('anychar', '[.]');
+```
+
 Define a comment
 ```
 def.defineComment('/*', '*/');
@@ -147,6 +152,7 @@ Expected output:
 
 - Version 0.0.1, first version.
 - Version 0.0.2, fixing ManyRule.
+- Version 0.0.3, detecting unclosed strings, match any character rule.
 
 ## Previous work
 
