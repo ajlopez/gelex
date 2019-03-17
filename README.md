@@ -163,7 +163,6 @@ TBD
 ## To Do
 
 - Support nested comments
-- Detect unclosed string texts
 - Detect unclosed comments
 - Programming language sample
 

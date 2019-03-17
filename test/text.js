@@ -38,3 +38,21 @@ exports['get string with escape'] = function (test) {
     test.deepEqual(result2, { type: 'string', value: 'foo"bar', begin: 10, end: 19 });
 };
 
+exports['unclose string'] = function (test) {
+    const def = gelex.definition();
+    
+    def.defineText('string', '"', '"');
+    
+    const lexer = def.lexer('"foo');
+    
+    try {
+        lexer.next();
+    }
+    catch (ex) {
+        test.equal(ex, 'Error: unclosed text');
+        return;
+    }
+    
+    test.fail();
+};
+
