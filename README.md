@@ -55,8 +55,21 @@ representation. A escaped character not included in this map
 is mapped to itself, ie: an escaped double quote is mapped
 to a double quote in the above definition.
 
-Create and use a lexer:
+Define many rules in one, using an array:
+```js
+def.define('delimiter', [ '{', '}', ',', ';' ]);
+def.define('operator', [ '+', '-', '*', '/', '==', '===', '**', '^', '!', '|', '||', '&', '&&' ]);
 ```
+
+It is equivalent to define each rule:
+```js
+def.define('delimiter', '{' );
+def.define('delimiter', '}' );
+...
+```
+
+Create and use a lexer:
+```js
 const lexer = def.lexer();
 
 const token = lexer.next();
@@ -74,7 +87,7 @@ Each token is an object with fields:
 
 Example:
 
-```
+```js
 const gelex = require('../..');
 const def = gelex.definition();
 
