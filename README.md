@@ -146,6 +146,7 @@ Expected output:
 ## Versions
 
 - Version 0.0.1, first version.
+- Version 0.0.2, fixing ManyRule.
 
 ## Previous work
 
