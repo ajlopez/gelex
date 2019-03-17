@@ -83,7 +83,6 @@ Define a line comment, giving only one argument:
 def.defineComment('//');
 ```
 
-
 Create and use a lexer:
 ```js
 const lexer = def.lexer();
@@ -155,6 +154,13 @@ Expected output:
 ## References
 
 TBD
+
+## To Do
+
+- Support nested comments
+- Detect unclosed string texts
+- Detect unclosed comments
+- Programming language sample
 
 ## License
 
