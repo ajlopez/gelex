@@ -68,6 +68,22 @@ def.define('delimiter', '}' );
 ...
 ```
 
+Define a comment
+```
+def.defineComment('/*', '*/');
+```
+The first argument is the starting text delimiter. The second
+argument is the ending text delimiter. Current version does not
+support nested comments, yet.
+
+A comment is processed like an space character.
+
+Define a line comment, giving only one argument:
+```
+def.defineComment('//');
+```
+
+
 Create and use a lexer:
 ```js
 const lexer = def.lexer();
