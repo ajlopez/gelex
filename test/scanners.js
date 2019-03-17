@@ -59,3 +59,24 @@ exports['scan same character twice'] = function (test) {
     test.equal(scanner.scan(), null);
 };
 
+exports['peek first character'] = function (test) {
+    const scanner = scanners.scanner('0123');
+
+    test.equal(scanner.peek(), '0');
+    test.equal(scanner.position(), 0);
+};
+
+exports['peek first character using length'] = function (test) {
+    const scanner = scanners.scanner('0123');
+
+    test.equal(scanner.peek(1), '0');
+    test.equal(scanner.position(), 0);
+};
+
+exports['peek first two characters using length'] = function (test) {
+    const scanner = scanners.scanner('0123');
+
+    test.equal(scanner.peek(2), '01');
+    test.equal(scanner.position(), 0);
+};
+
