@@ -20,6 +20,18 @@ exports['get integer'] = function (test) {
     test.equal(lexer.next(), null);
 };
 
+exports['get one digit integer'] = function (test) {
+    const def = gelex.definition();
+    def.define('integer', '[0-9][0-9]*');
+    
+    const lexer = def.lexer('1');
+    
+    const result = lexer.next();
+    
+    test.ok(result);
+    test.deepEqual(result, { type: 'integer', value: '1', begin: 0, end: 0 });
+};
+
 exports['get name'] = function (test) {
     const def = gelex.definition();
     def.define('name', '[a-zA-Z_][a-zA-Z0-9_]*');
