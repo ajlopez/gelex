@@ -143,6 +143,10 @@ Expected output:
 { type: 'string', value: 'bar', begin: 34, end: 38 }
 ```
 
+## Versions
+
+- Version 0.0.1, first version.
+
 ## Previous work
 
 - [SimpleGrammar](https://github.com/ajlopez/SimpleGrammar)

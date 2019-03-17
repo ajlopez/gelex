@@ -1,11 +1,11 @@
 {
   "name": "gelex",
-  "description": "Generic lexer, WIP",
+  "description": "Generic lexer",
   "keywords": [
     "lexer",
     "compiler"
   ],
-  "version": "0.0.1alpha",
+  "version": "0.0.1",
   "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)",
   "repository": {
     "type": "git",
