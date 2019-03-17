@@ -128,11 +128,9 @@ Expected output:
 { type: 'string', value: 'bar', begin: 34, end: 38 }
 ```
 
-
-
 ## Previous work
 
-TBD
+- [SimpleGrammar](https://github.com/ajlopez/SimpleGrammar)
 
 ## Samples
 
