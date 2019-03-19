@@ -171,6 +171,7 @@ TBD
 - Support nested comments
 - Detect unclosed comments
 - Programming language sample
+- Custom rule
 
 ## License
 
