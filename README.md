@@ -73,6 +73,32 @@ Matching any character using `[.]`:
 def.define('anychar', '[.]');
 ```
 
+Define a custom rule
+```
+def.define('character', rule);
+```
+where `rule` is an object with two functions:
+
+- `first()`: returns the initial characters for the rule
+- `match(scanner)`: returns null if no match, or the detected value as string if there is a match.
+
+Example, a rule detecting `$a` as the character `a` (as in Smalltalk):
+
+```
+function CharacterRule(ch) {
+    this.first = function () { return ch; };
+    
+    this.match = function (scanner) {
+        if (scanner.peek() !== ch)
+            return null;
+        
+        scanner.scan();
+        
+        return scanner.scan();
+    };
+}
+```
+
 Define a comment
 ```
 def.defineComment('/*', '*/');
@@ -87,6 +113,7 @@ Define a line comment, giving only one argument:
 ```
 def.defineComment('//');
 ```
+
 
 Create and use a lexer:
 ```js
@@ -153,6 +180,7 @@ Expected output:
 - Version 0.0.1, first version.
 - Version 0.0.2, fixing ManyRule.
 - Version 0.0.3, detecting unclosed strings, match any character rule.
+- Version 0.0.4, custom rule
 
 ## Previous work
 
@@ -171,7 +199,6 @@ TBD
 - Support nested comments
 - Detect unclosed comments
 - Programming language sample
-- Custom rule
 
 ## License
 
