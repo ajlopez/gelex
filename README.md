@@ -73,6 +73,20 @@ Matching any character using `[.]`:
 def.define('anychar', '[.]');
 ```
 
+Define a rule with transform
+```
+def.define('symbol', '#[a-zA-Z_][a-zA-Z_]*', trfn);
+```
+where `trfn` is a function that receives the scanned text value and returns
+another value. Example:
+
+```
+def.define('symbol', '#[a-zA-Z_][a-zA-Z_]*', 
+    function (value) {
+        return value.substring(1); // removing initial #
+    });
+```
+
 Define a custom rule
 ```
 def.define('character', rule);
@@ -181,6 +195,8 @@ Expected output:
 - Version 0.0.2, fixing ManyRule.
 - Version 0.0.3, detecting unclosed strings, match any character rule.
 - Version 0.0.4, custom rule
+- Version 0.0.4, custom rule
+- Version 0.0.5, transform function in define
 
 ## Previous work
 
