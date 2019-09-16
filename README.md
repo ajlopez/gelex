@@ -36,14 +36,14 @@ def.define('name', '[a-zA-Z_][a-zA-Z0-9_]*');
 
 Define a delimited text (a string):
 ```js
-def.define('string', '"', '"');
+def.defineText('string', '"', '"');
 ```
 The second argument is the starting text delimiter and the third argument is 
 the ending text delimiter.
 
 Escaped characters could be optionally defined:
 ```js
-def.define('string', '"', '"'
+def.defineText('string', '"', '"',
     {
         escape: '\\',
         escaped: { 'n': '\n', 'r': '\r', 't': '\t' }
