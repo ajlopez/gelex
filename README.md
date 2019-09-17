@@ -197,6 +197,7 @@ Expected output:
 - Version 0.0.4, custom rule
 - Version 0.0.4, custom rule
 - Version 0.0.5, transform function in define
+- Version 0.0.6, char function in Lexer
 
 ## Previous work
 
