@@ -112,3 +112,27 @@ exports['get integer'] = function (test) {
     test.equal(lexer.next(), null);
     test.equal(lexer.position(), 4);
 };
+
+exports['get integer twice using seek'] = function (test) {
+    gelex.define('integer', '[0-9][0-9]*');
+    
+    const lexer = gelex.lexer('  1234  ');
+    
+    var result = lexer.next();
+    
+    test.deepEqual(result, { type: 'integer', value: '1234', begin: 2, end: 5 });
+    
+    test.equal(lexer.next(), null);
+    test.equal(lexer.position(), 8);
+    
+    lexer.seek(result.begin);
+    
+    test.equal(lexer.position(), result.begin);
+    
+    var result2 = lexer.next();
+    
+    test.deepEqual(result2, { type: 'integer', value: '1234', begin: 2, end: 5 });
+    
+    test.equal(lexer.next(), null);
+    test.equal(lexer.position(), 8);
+};
